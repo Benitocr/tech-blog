@@ -32,10 +32,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+ 
   Post.create({
     title: req.body.title,
-    post_url: req.body.post_url,
+    post_comment: req.body.post_comment,
     user_id: req.body.user_id
   })
     .then(dbPostData => res.json(dbPostData))
@@ -49,7 +49,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Post.update(
     {
-      title: req.body.title
+
+      post_comment: req.body.post_comment,
     },
     {
       where: {
