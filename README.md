@@ -1,6 +1,6 @@
 # tech-blog
 
-![Javascript](https://img.shields.io/badge/Javascipt-blue) 
+
 
 ## Purpose
 CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well.
