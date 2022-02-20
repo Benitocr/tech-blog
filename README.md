@@ -13,6 +13,7 @@ CMS-style blog site where developers can publish their blog posts and comment on
   * dotenv 
   * express-session
   * connect-session-sequilize
+  * express-handlebars
 
 ## Application
 
