@@ -3,14 +3,10 @@
     <article class="card">
         <div class = "card-header">
             <h2>{{post.title}}</h2>
-            <span> Posted by {{user.username}} on {{ post.createdAt}}</span>
+            <span> Posted by {{user.username}} on {{format_date post.createdAt}}</span>
         </div>
     <div class="card-body">
         {{post.post_comment}}
-    {{!-- {{vote_count}} {{format_plural "point" vote_count}} by  on
-    {{format_date created_at}}
-    |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> --}}
     </div>
     </article>      
   

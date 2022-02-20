@@ -167,7 +167,7 @@
   .card-header {
     color: var(--primary);
     background-color: var(--dark);
-    padding: 2.5%;
+    padding: 0.5%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
   
@@ -189,7 +189,7 @@
   
   .form-input {
     width: 100%;
-    padding: 3%;
+    padding: 0;
     margin: 5px 0;
     font-size: 1.2rem;
     border: 2px solid var(--light-dark);
