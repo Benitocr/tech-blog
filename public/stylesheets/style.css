@@ -22,7 +22,7 @@
   }
   
   h1,
-  h2,
+ 
   h3,
   h4,
   h5,
@@ -32,13 +32,20 @@
     color: var(--dark);
     line-height: 1.25;
   }
+
+  h2{
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary);
+    line-height: 1.25;
+  }
   
   main {
     margin: 20px auto;
     width: 94%;
   }
   
-  p {
+  a p {
     font-size: 1.2rem;
   }
   
@@ -92,6 +99,11 @@
     box-shadow: 2px 2px var(--dark);
   }
   
+  .hero1 {
+    padding: 3% 4% 3% 0;
+    background-color: var(--dark);
+    color: var(--primary);
+  }
   .hero {
     padding: 3% 4%;
     background-color: var(--dark);
