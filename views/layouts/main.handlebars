@@ -16,13 +16,16 @@
            <a class= "hero1"href="/dashboard">Dashboard</a>
             {{#if loggedIn}}
             
-            <button id="logout" class="btn-no-style">logout</button>
+            <a id="logout" class="hero1" href="/login">logout</a>
             {{else}}
             <a class = "hero1" href="/login">login</a>
             {{/if}}
         </nav>  
-      <h1 class="app-title"><i class="fab fa-github"></i>The Tech Blog</h1>
-    
+        {{#if loggedIn}}
+        <h1 class="app-title"><i class="fab fa-github"></i>Your Dashboard</h1>
+        {{else}}
+        <h1 class="app-title"><i class="fab fa-github"></i>The Tech Blog</h1>
+        {{/if}}
     </header>
     <main>
       {{{ body }}}
