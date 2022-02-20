@@ -1,0 +1,21 @@
+<section>
+     <button type="submit" class="btn new-post-form" id="new-post-form">+ New Post</button>
+</section>
+
+{{#if posts.length}}
+<section>
+ 
+  {{!-- <ol> --}}
+    {{#each posts as |post|}}
+    
+      {{> post-info post}}
+      {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
+    
+    {{/each}}
+  {{!-- </ol> --}}
+</section>
+{{/if}}
+
+
+
+<script src="/javascript/add-post.js"></script>

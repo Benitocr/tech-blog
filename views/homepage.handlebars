@@ -1,7 +1,9 @@
 <ol class="post-list">
   {{#each posts as |post| }}
-    <article class="card">
-        <div class = "card-header">
+  {{> post-info post }}
+    {{!-- <article class="card">
+        <div class = "card-header" >
+            
             <h2>{{post.title}}</h2>
             <span> Posted by {{user.username}} on {{format_date post.createdAt}}</span>
         </div>
@@ -9,6 +11,6 @@
         {{post.post_comment}}
     </div>
     </article>      
-  
+   --}}
   {{/each}}
 </ol>

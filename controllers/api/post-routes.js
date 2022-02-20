@@ -1,6 +1,8 @@
 const router = require('express').Router();
+const session = require('express-session');
 const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
@@ -31,12 +33,14 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
- 
+router.post('/', withAuth, (req, res) => {
+  // if(!req.body.user_id){
+  //   user_id = session.user.user_id;
+  // }
   Post.create({
     title: req.body.title,
     post_comment: req.body.post_comment,
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
