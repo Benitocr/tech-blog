@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
               model: User,
               attributes: ['username']
             }
-          ]
+        ],
+        order: [['createdAt', 'DESC']]
     })
     .then(dbPostData => {
       // pass a single post object into the homepage template
