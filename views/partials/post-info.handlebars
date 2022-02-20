@@ -4,13 +4,11 @@
             <h2>{{title}}</h2>
             <span> Posted by {{user.username}} on {{format_date createdAt}}</span>
         </div>
-        {{#if loggedIn}}
-            <div class="card-body">
-               <h1>Ejemplo</h1>
-            </div>
-        {{else}}
+        {{#if post_comment}}
             <div class="card-body">
                 {{post_comment}}
             </div>
+        {{else}}
+            
         {{/if}}
     </article>   

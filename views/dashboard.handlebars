@@ -2,19 +2,18 @@
      <button type="submit" class="btn new-post-form" id="new-post-form">+ New Post</button>
 </section>
 
-{{#if posts.length}}
-<section>
- 
-  {{!-- <ol> --}}
-    {{#each posts as |post|}}
-    
-      {{> post-info post }}
-      {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
-    
-    {{/each}}
-  {{!-- </ol> --}}
-</section>
-{{/if}}
+{{!-- {{#if posts.length}} --}}
+{{#each posts as |post|}}
+<article class="card">
+    <div class = "card-header" >
+        {{!-- {{#if loggedIn}} href = "" {{/if}} --}}
+        <a href="/dashboard/edit/{{id}}"> <h2 >{{post.title}}</h2> </a>
+        <span> Posted by {{user.username}} on {{format_date post.createdAt}}</span>
+    </div>
+   
+</article> 
+{{/each}}
+{{!-- {{/if}} --}}
 
 
 

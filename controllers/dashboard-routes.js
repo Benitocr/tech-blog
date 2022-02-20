@@ -56,32 +56,33 @@ router.get('/edit/:id', withAuth,(req, res)=>{
             'title',
             'createdAt'
             
-        ],
-        order: [['createdAt', 'DESC']], 
-        include: [
-          {
-              model: Comment,
-              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
-              include: {
-                model: User,
-                attributes: ['username']
-              }
-          }, 
-          {
-              model: User,
-              attributes: ['username']
-          }
-        ]
+         ] //,
+        // include: [
+        //   {
+        //       model: Comment,
+        //       attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
+        //       include: {
+        //         model: User,
+        //         attributes: ['username']
+        //       }
+        //   }, 
+        //   {
+        //       model: User,
+        //       attributes: ['username']
+        //   }
+        // ]
     })
     .then(dbPostData => {
     if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
     }
-        const post = dbPostData.get({ plain: true });
+        // const posts = dbPostData.get({ plain: true });
+        const posts = dbPostData;
+        // console.log(dbPostData);
 
         res.render('edit-post', {
-        post,
+        posts,
         loggedIn: true
         });
     })

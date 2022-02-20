@@ -1,0 +1,25 @@
+<article>    
+    <form class="card edit-form">
+    {{#if posts}} 
+     
+     <h2 class="card-header">Edit Post</h2> 
+    <div >
+        <h4>Title:</h4>
+      <input class="form-input" id="post-title" type="text" value ="{{title}}" />
+    </div>
+    <div>
+        <h4>Content:</h4>
+      <input class= "form-input" id="post-content" type="text" value="{{post_comment}}" />
+    </div>
+   
+    <button type="submit" class="btn" id="update-btn">Update post</button>
+    <button type="button" class="btn" id="delete-post-btn">Delete post</button>
+     {{/if}}
+  </form>
+    
+  
+
+</article>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>

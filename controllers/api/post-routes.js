@@ -53,7 +53,7 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', (req, res) => {
   Post.update(
     {
-
+      title: req.body.title,
       post_comment: req.body.post_comment,
     },
     {
