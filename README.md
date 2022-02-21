@@ -14,8 +14,13 @@ CMS-style blog site where developers can publish their blog posts and comment on
   * express-session
   * connect-session-sequilize
   * express-handlebars
+* live website deployed in Heroku.
 
 ## Application
+Next it the link of the website deployed in heroku
+https://ben-tech-blog.herokuapp.com/
+
+
 
 We use insomnia application to test the different GET, Post, Put and Delete Routes.
 ![Tech-blog](images/mockup.jpg)
