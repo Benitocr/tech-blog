@@ -1,4 +1,17 @@
-<article>    
+<article class="card">
+        <div class = "card-header" >
+            <h2>{{posts.title}}</h2>
+            <span> Posted by {{user.username}} on {{format_date posts.createdAt}}</span>
+        </div>
+        {{#if posts.post_comment}}
+            <div class="card-body">
+                {{posts.post_comment}}
+            </div>
+        {{else}}
+            
+        {{/if}}
+    </article>  
+
     <form class="card edit-form">
     {{#with posts}} 
         
@@ -17,9 +30,4 @@
      {{/with}}
   </form>
     
-  
 
-</article>
-
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>

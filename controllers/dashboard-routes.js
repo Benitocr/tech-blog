@@ -56,21 +56,21 @@ router.get('/edit/:id', withAuth,(req, res)=>{
             'title',
             'createdAt'
             
-         ] //,
-        // include: [
-        //   {
-        //       model: Comment,
-        //       attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
-        //       include: {
-        //         model: User,
-        //         attributes: ['username']
-        //       }
-        //   }, 
-        //   {
-        //       model: User,
-        //       attributes: ['username']
-        //   }
-        // ]
+         ] ,
+        include: [
+          {
+              model: Comment,
+              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
+              include: {
+                model: User,
+                attributes: ['username']
+              }
+          }, 
+          {
+              model: User,
+              attributes: ['username']
+          }
+        ]
     })
     .then(dbPostData => {
     if (!dbPostData) {
@@ -78,7 +78,7 @@ router.get('/edit/:id', withAuth,(req, res)=>{
         return;
     }
         // const posts = dbPostData.get({ plain: true });
-        const posts = dbPostData;
+        const posts = dbPostData.get({ plain: true });;
         // console.log(dbPostData);
 
         res.render('edit-post', {
